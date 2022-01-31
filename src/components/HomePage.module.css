@@ -1,53 +1,65 @@
-.container {
-    width: 100%;
-    height: 100vh;
+
+
+.headBanner {
+  width: 100%;
+  height: 80vh;
+  margin: 50px auto;
+  background: url("../image/coin.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 25px;
+/* =========== */
+
+.mainCoins {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.header ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.topCoinsContainer {
+  background-color: #f5f5f5;
+  width: 20rem;
+  height: 25rem;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-
-.header ul li {
-    list-style-type: none;
-    margin: 10px;
-    font-size: 20px;
-}
-
-.header ul li a {
-    text-decoration: none;
-}
-
-/* ==== */
 
 .coinImg {
-    width: 35rem;
-    height: 25rem;
-    margin: auto;
-    position: relative;
-    top: 70px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  width: 15rem;
+  height: 14rem;
+  margin-bottom: 15px;
 }
 
-.information {
-    background-color: #fff;
-    border-radius: 5px;
-    width: 15rem;
-    height: 11rem;
-    position: absolute;
-    left: 270px;
-    bottom: 100px;
-    text-align: justify;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 5px;
+.firstDetail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 10px;
+  font-size: 18px;
+}
+
+.negativePrice,
+.plusPrice {
+  margin: 22px auto;
+  font-size: 18px;
+}
+
+.negativePrice {
+  color: red;
+}
+
+.plusPrice {
+  color: green;
+}
+
+.marketCap {
+  font-size: 20px;
 }

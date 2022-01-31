@@ -1,36 +1,49 @@
-import React from "react";
+import React, { useContext } from "react";
+
+// context
+import { CoinsContext } from "../context/GetApiContext";
 
 // style
 import styles from "./HomePage.module.css";
 
-// image
-import coinBanner from "../image/coin2.jpg";
+
 
 const HomePage = () => {
+  const data = useContext(CoinsContext);
+
+  const coins = data.filter((coin) => coin.market_cap_rank <= 3);
+
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-          <h3>coin</h3>
-        <ul className={styles.list}>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">Coins</a>
-          </li>
-          <li>
-            <a href="">About</a>
-          </li>
-        </ul>
-      </div>
-      <div className={styles.headBanner}>
-        <img src={coinBanner} className={styles.coinImg} />
-        <p className={styles.information}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex,
-          laboriosam earum in fuga saepe praesentium pariatur aliquid quis
-          distinctio qui rerum temporibus voluptates, quod dolor maiores ad
-          fugiat facere commodi.
-        </p>
+
+      <div className={styles.headBanner}></div>
+
+      <div className={styles.mainCoins}>
+        {coins.length ? (
+          coins.map((coin) => (
+            <div className={styles.topCoinsContainer} key={coin.id}>
+              <img src={coin.image} className={styles.coinImg} />
+              <div className={styles.firstDetail}>
+                <p>{coin.name}</p>
+                <p>${coin.current_price}</p>
+              </div>
+              <p
+                className={
+                  coin.market_cap_change_percentage_24h > 0
+                    ? styles.plusPrice
+                    : styles.negativePrice
+                }
+              >
+                {coin.market_cap_change_percentage_24h.toFixed(2)}
+              </p>
+              <p className={styles.marketCap}>
+                {coin.market_cap.toLocaleString()}
+              </p>
+            </div>
+          ))
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     </div>
   );
