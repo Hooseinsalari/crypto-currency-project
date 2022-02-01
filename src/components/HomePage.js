@@ -6,12 +6,14 @@ import { CoinsContext } from "../context/GetApiContext";
 // style
 import styles from "./HomePage.module.css";
 
-
+// router
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const data = useContext(CoinsContext);
 
   const coins = data.filter((coin) => coin.market_cap_rank <= 3);
+
 
   return (
     <div className={styles.container}>
@@ -44,6 +46,9 @@ const HomePage = () => {
         ) : (
           <h1>Loading...</h1>
         )}
+      </div>
+      <div className={styles.moreCoins}>
+        <Link to="/coins">More Coins</Link>
       </div>
     </div>
   );

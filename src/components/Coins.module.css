@@ -1,15 +1,146 @@
-table {
-    font-family: arial, sans-serif;
+.tableWrapper{
+    margin: 10px 10px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+    z-index: 1;
+}
+
+.flTable {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
     border-collapse: collapse;
     width: 100%;
-  }
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
 
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
+.flTable td, .flTable th {
+    text-align: center;
     padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+}
+
+.flTable td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 16px;
+}
+
+.flTable thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+    font-size: 17px;
+    
+}
+
+
+.flTable thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.flTable tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+.input {
+    width: 20rem;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    /* border: 2px solid #000; */
+    border: 2px solid #e7e7e7;
+    text-align: left;
+    outline: none;
+    box-shadow: -2px -1px 10px -4px rgba(0,0,0,0.75) inset;
+-webkit-box-shadow: -2px -1px 10px -4px rgba(0,0,0,0.75) inset;
+-moz-box-shadow: -2px -1px 10px -4px rgba(0,0,0,0.75) inset;
+}
+
+.input:focus {
+    border: 2px solid #4FC3A1;
+    transition: border 0.3s ease-in;
+}
+
+.input[type="text"] {
+    font-size: 18px;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .flTable {
+        display: block;
+        width: 100%;
+    }
+    .tableWrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .flTable thead, .flTable tbody, .flTable thead th {
+        display: block;
+    }
+    .flTable thead th:last-child{
+        border-bottom: none;
+    }
+    .flTable thead {
+        float: left;
+    }
+    .flTable tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        height: 22.5rem;
+    }
+    .flTable td, .flTable th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 15px;
+        text-overflow: ellipsis;
+    }
+    .flTable thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .flTable tbody tr {
+        display: table-cell;
+    }
+    .flTable tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .flTable tr:nth-child(even) {
+        background: transparent;
+    }
+    .flTable tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .flTable tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .flTable tbody td {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 369px) {
+    .flTable thead th {
+        overflow-x: auto;
+        width: 5rem;
+    }
+
+    .flTable th {
+        text-overflow: clip;
+    }
+}

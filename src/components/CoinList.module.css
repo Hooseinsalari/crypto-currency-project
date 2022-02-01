@@ -1,3 +1,11 @@
 img {
     width: 2rem;
 }
+
+.plusPrice {
+    color: green;
+}
+
+.negativePrice {
+    color: red;
+}
