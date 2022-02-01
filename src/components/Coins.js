@@ -20,11 +20,10 @@ const Coins = () => {
     setInputValue(event.target.value)
   }
 
-  const searchCoins = coins.filter((coin) => coin.name.toLowerCase().includes(inputValue))
-  console.log(searchCoins)
+  const searchCoins = coins.filter((coin) => coin.name.toLowerCase().includes(inputValue.toLowerCase()))
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container}>  
       {coins.length ? (
         <>
           <div>
