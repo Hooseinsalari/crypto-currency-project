@@ -93,8 +93,27 @@
     width: auto;
     position: relative;
     overflow-x: auto;
+    overflow-y: hidden;
     height: 22.5rem;
   }
+   
+
+  .flTable tbody::-webkit-scrollbar {
+    width: 5px;
+    height: 4px;
+  }
+
+  .flTable tbody::-webkit-scrollbar-track {
+    background: #e4e3e3;
+    height: 3px;
+  }
+
+  .flTable tbody::-webkit-scrollbar-thumb {
+    background: #888;
+    height: 3px;
+
+  }
+
   .flTable td,
   .flTable th {
     padding: 20px 0.625em 0.625em 0.625em;
@@ -134,10 +153,27 @@
   }
 }
 
-@media (max-width: 369px) {
+@media (max-width: 485px) {
   .flTable thead th {
     overflow-x: auto;
+    overflow-y: hidden;
     width: 5rem;
+  }
+
+  .flTable thead th::-webkit-scrollbar {
+    width: 1px;
+    height: 2px;
+  }
+
+  .flTable thead th::-webkit-scrollbar-track {
+    background: #e4e3e3;
+    height: 3px;
+  }
+
+  .flTable thead th::-webkit-scrollbar-thumb {
+    background: rgb(172, 172, 172);
+    height: 3px;
+
   }
 
   .flTable th {
