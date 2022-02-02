@@ -1,5 +1,3 @@
-import './App.css';
-
 // context
 import GetApiContext from './context/GetApiContext';
 

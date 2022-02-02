@@ -1,29 +1,26 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext } from "react";
 
 // api
-import { getApi } from '../services/GetApiComponent';
+import { getApi } from "../services/GetApiComponent";
 
 // context
-export const CoinsContext = createContext()
+export const CoinsContext = createContext();
 
-const GetApiContext = ({children}) => {
+const GetApiContext = ({ children }) => {
+  const [coins, setCoins] = useState([]);
 
-    const [coins, setCoins] = useState([])
+  useEffect(() => {
+    const fetchApi = async () => {
+      const { data } = await getApi();
+      setCoins(data);
+    };
 
-    useEffect(() => {
-        const fetchApi = async () => {
-            const {data} = await getApi()
-            setCoins(data)
-        }
+    fetchApi();
+  }, []);
 
-        fetchApi()
-    }, [])
-
-    return (
-        <CoinsContext.Provider value={coins}>
-            {children}
-        </CoinsContext.Provider>
-    );
+  return (
+    <CoinsContext.Provider value={coins}>{children}</CoinsContext.Provider>
+  );
 };
 
 export default GetApiContext;

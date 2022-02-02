@@ -1,13 +1,13 @@
 .title {
-    color: rgb(0, 0, 0);
-    font-size: 45px;
-    margin: 20px auto;
+  color: rgb(0, 0, 0);
+  font-size: 45px;
+  margin: 20px auto;
 }
 
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid #4FC3A1;
+  border-top: 16px solid #4fc3a1;
   border-bottom: 16px solid #324960;
   width: 120px;
   height: 120px;

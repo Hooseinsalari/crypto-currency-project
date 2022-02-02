@@ -14,17 +14,14 @@ const HomePage = () => {
 
   const coins = data.filter((coin) => coin.market_cap_rank <= 3);
 
-
   return (
     <div className={styles.container}>
-
       <div className={styles.headBanner}></div>
-
       <div className={styles.mainCoins}>
         {coins.length ? (
           coins.map((coin) => (
             <div className={styles.topCoinsContainer} key={coin.id}>
-              <img src={coin.image} className={styles.coinImg} />
+              <img src={coin.image} className={styles.coinImg} alt="logo" />
               <div className={styles.firstDetail}>
                 <p>{coin.name}</p>
                 <p>${coin.current_price}</p>

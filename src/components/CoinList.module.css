@@ -1,11 +1,15 @@
 img {
-    width: 2rem;
+  width: 2rem;
+}
+
+td {
+  font-weight: 700;
 }
 
 .plusPrice {
-    color: green;
+  color: green;
 }
 
 .negativePrice {
-    color: red;
+  color: red;
 }

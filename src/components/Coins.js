@@ -11,19 +11,20 @@ import styles from "./Coins.module.css";
 import Loading from "./Loading";
 
 const Coins = () => {
-
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState("");
 
   const coins = useContext(CoinsContext);
-  
-  const inputHandler = (event) => {
-    setInputValue(event.target.value)
-  }
 
-  const searchCoins = coins.filter((coin) => coin.name.toLowerCase().includes(inputValue.toLowerCase()))
+  const inputHandler = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const searchCoins = coins.filter((coin) =>
+    coin.name.toLowerCase().includes(inputValue.toLowerCase())
+  );
 
   return (
-    <div className={styles.container}>  
+    <div className={styles.container}>
       {coins.length ? (
         <>
           <div>
@@ -49,18 +50,17 @@ const Coins = () => {
               </thead>
               <tbody>
                 {coins.length
-                  ? searchCoins.length ?
-                  searchCoins.map((coin) => (
-                    <CoinList
-                      key={coin.id}
-                      coinSymbol={coin.symbol}
-                      coinName={coin.name}
-                      coinImage={coin.image}
-                      coinPrice={coin.current_price}
-                      changeCoinPrice={coin.market_cap_change_percentage_24h}
-                      marketCap={coin.market_cap}
-                    />
-                  )): <h1>Empty</h1>
+                  ? searchCoins.map((coin) => (
+                      <CoinList
+                        key={coin.id}
+                        coinSymbol={coin.symbol}
+                        coinName={coin.name}
+                        coinImage={coin.image}
+                        coinPrice={coin.current_price}
+                        changeCoinPrice={coin.market_cap_change_percentage_24h}
+                        marketCap={coin.market_cap}
+                      />
+                    ))
                   : null}
               </tbody>
             </table>
