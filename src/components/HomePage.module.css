@@ -1,8 +1,12 @@
+.container{
+  margin-top: 100px;
+}
+
 .headBanner {
   width: 100%;
   height: 80vh;
   margin: 50px auto;
-  background: url("../image/coin.jpg");
+  background: url("../image/coin.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -41,7 +45,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 3px 10px;
-  font-size: 18px;
+  font-size: 18px;  
 }
 
 .negativePrice,
@@ -62,11 +66,10 @@
   font-size: 20px;
 }
 
-.moreCoins {
+.moreCoins a{
   font-size: 25px;
-  margin: 20px auto;
-}
-
-.moreCoins a {
+  margin: 4rem auto;
   color: #000;
+  display: inline-block;
+  cursor: pointer;
 }

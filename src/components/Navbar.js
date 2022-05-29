@@ -22,31 +22,34 @@ const Navbar = () => {
   return (
     <div className={styles.header}>
       <img src={logo} alt="logo" className={styles.logo} />
+
       <div className={styles.menu}>
-        <ul className={isShow ? styles.listT : styles.listF}>
-          <li>
-            <Link to="/" className={styles.link}>
+        <ul className={`${!isShow ? styles.menu__listClose :styles.menu__list}`}>
+          <li className={styles.menu__item}>
+            <Link to="/" className={styles.menu__link}>
               Home
             </Link>
           </li>
-          <li>
-            <Link to="coins" className={styles.link}>
+          <li className={styles.menu__item}>
+            <Link to="coins" className={styles.menu__link}>
               Coins
             </Link>
           </li>
-          <li>
-            <Link to="/" className={styles.link}>
+          <li className={styles.menu__item}>
+            <Link to="/" className={styles.menu__link}>
               About
             </Link>
           </li>
         </ul>
-        <img
-          src={bars}
-          alt="logo"
-          className={styles.menuLogo}
-          onClick={showHandler}
-        />
       </div>
+
+      <img
+        src={bars}
+        alt="logo"
+        className={styles.menuLogo}
+        onClick={showHandler}
+      />
+
     </div>
   );
 };

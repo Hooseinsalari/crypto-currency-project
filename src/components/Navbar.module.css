@@ -1,81 +1,95 @@
-.container {
-  width: 100%;
-  height: 100vh;
-}
-
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 10px;
+  padding: 2.3rem 1.5rem;
   width: 100%;
   height: 4rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
     rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f2f3f5;
+  z-index: 100;
 }
 
 .logo {
   width: 10rem;
 }
 
-.listT,
-.listF {
+.menu__list, .menu__listClose {
+  list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.header ul li {
-  list-style-type: none;
-  margin: 10px;
+.menu__item {
+  margin: 0 1.5rem;
+  position: relative;
 }
 
-.header ul li .link {
+.menu__item::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #f3ba2f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.menu__item:hover::after {
+  width: 100%;
+}
+
+.menu__link {
+  color: #2a1f0c;
   text-decoration: none;
-  font-size: 21px;
-  color: black;
+  font-size: 1.4rem;
+  font-weight: 500;
+  opacity: 0.7;
+  transition: 0.4s;
+}
+
+.menu__link:hover {
+  opacity: 1;
 }
 
 .menuLogo {
   display: none;
-  width: 25px;
-  cursor: pointer;
 }
 
 /* responsive */
 
 @media screen and (max-width: 635px) {
-  .menu {
-    display: flex;
-    align-items: center;
-  }
-
-  .listF {
-    display: none;
-  }
-
   .menuLogo {
     display: block;
+    width: 1.5rem;
+    cursor: pointer;
+  }
+
+  .menu {
     position: relative;
   }
 
-  .listT {
+  .menu__list, .menu__listClose {
+    background-color: #f2f3f5;
     flex-direction: column;
-    position: absolute;
-    top: 64px;
-    right: 0;
+    position: fixed;
+    top: 4.6rem;
+    left: 0;
     width: 100%;
-    background-color: #e5e5e5;
-    z-index: 5;
+    z-index: 100;
+    transition: 0.3s;
   }
 
-  .header ul li {
-    width: 100%;
-    margin: 0;
-    padding: 10px;
+  .menu__listClose {
+    top: -100%;
   }
 
-  .header ul li:hover {
-    background-color: #ffffff;
+  .menu__item {
+    margin: 2rem auto;
   }
 }
